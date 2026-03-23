@@ -1,0 +1,14 @@
+[project]
+name = "agimage"
+version = "0.1.0"
+requires-python = ">=3.12"
+readme = "README.md"
+
+[tool.uv.workspace]
+members = ["services/*", "packages/*"]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.11",
+]

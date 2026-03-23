@@ -1,0 +1,19 @@
+[project]
+name = "agimage_worker"
+version = "0.1.0"
+description = "Background worker for agimage"
+requires-python = ">=3.12"
+dependencies = [
+    "agimage_domain",
+    "agimage_infra",
+    "agpyutils @ git+https://github.com/iwaag/agpyutils.git@main",
+    "hatchet_sdk",
+]
+
+[tool.uv.sources]
+agimage_domain = { workspace = true }
+agimage_infra = { workspace = true }
+
+[build-system]
+requires = ["uv_build>=0.10.3,<0.11.0"]
+build-backend = "uv_build"

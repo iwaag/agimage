@@ -1,0 +1,23 @@
+[project]
+name = "agimage_api"
+version = "0.1.0"
+description = "HTTP entrypoint for agimage"
+requires-python = ">=3.12"
+dependencies = [
+    "agimage_domain",
+    "agimage_infra",
+    "fastapi[standard]",
+    "hatchet_sdk",
+    "nanoid",
+    "psycopg2-binary",
+    "sqlmodel",
+    "uvicorn",
+]
+
+[tool.uv.sources]
+agimage_domain = { workspace = true }
+agimage_infra = { workspace = true }
+
+[build-system]
+requires = ["uv_build>=0.10.3,<0.11.0"]
+build-backend = "uv_build"
